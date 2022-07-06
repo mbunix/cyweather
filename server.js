@@ -3,7 +3,7 @@ const next = require("next");
 require("dotenv").config();
 
 const dev = process.env.NODE_ENV !== "production";
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 const app = next({ dev });
 const handle = app.getRequestHandler();
 const request = require("request");
@@ -25,21 +25,21 @@ app
       message: "Too many weather requests from this IP, please try again in 5 minutes."
     });
     // server.use(limiter);
-    server.use("/api/darkSky/", apiLimiter);
+    server.use("/https://api.open-meteo.com/v1/forecast/", apiLimiter);
 
-    server.get("/api/darkSky/:lat,:lng", (req, res) => {
-      var endpoint = "https://api.darksky.net/forecast/";
+    server.get("/https://api.open-meteo.com/v1/forecast/:lat,:lng", (req, res) => {
+      var endpoint = "https://api.open-meteo.com/v1/forecast";
       var key = process.env.DARK_SKY_API_KEY;
       var settings = "?extend=hourly&exclude=minutely";
       var url = endpoint + key + "/" + req.params.lat + "," + req.params.lng + settings;
       req.pipe(request(url)).pipe(res);
     });
 
-    server.get("/api/google/:query", (req, res) => {
-      var endpoint = "https://maps.googleapis.com/maps/api/js";
-      var key = "?key=" + process.env.GOOGLE_MAPS_API_PLACES_KEY;
-      var url = endpoint + key + req.params.query;
-      req.pipe(request(url)).pipe(res);
+  server.get("/api/google/:query", (req, res) => {    
+  var endpoint = "https://maps.googleapis.com/maps/api/js";
+     var key = "?key=" + process.env.GOOGLE_MAPS_API_PLACES_KEY;
+    var url = endpoint + key + req.params.query;
+     req.pipe(request(url)).pipe(res);
     });
 
     server.get("/api/ipinfo/:ip", (req, res) => {

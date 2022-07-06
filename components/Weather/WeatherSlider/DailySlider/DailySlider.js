@@ -38,8 +38,7 @@ const dailySlider = props => {
 
   let slider = null;
   let sliderInitialize = null;
-
-  sliderInitialize = props.weather.daily.data.slice(0, 8).map((item, index) => {
+  sliderInitialize = props.weather.daily.data.slice(0, 8).map((item, _index) => {
     const backgroundCondition = {
       backgroundImage: `url(/weatherBackgrounds/${item.icon}.jpg)`
     };

@@ -17,13 +17,13 @@ const currently = props => {
         <div className="col-7">
           <div className={styles.now}>
             <WeatherIcon condition={props.currently.icon} color="white" />
-            <div className={styles.summary}>{props.currently.summary}</div>
+            <div className={styles.summary}>{props.currently}</div>
             <div className={styles.location}>
               {props.city && props.city}
               {props.city !== "" && props.region !== "" ? "," : ""} {props.region}
             </div>
             <div className={styles.temp}>
-              {props.currently.temperature && Math.round(props.currently.temperature)}{" "}
+              {props.currently && Math.round(props.currently.temperature.icon)}{" "}
               <Units flags={props.flags} />
             </div>
             {props.daily && (

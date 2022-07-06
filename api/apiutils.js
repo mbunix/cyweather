@@ -32,7 +32,7 @@ export function getPosition() {
   // Get weather from coordinates
   export function fetchWeather(latitude, longitude) {
     return (
-      fetch(`/api/darksky/${latitude},${longitude}`)
+      fetch(`https://api.open-meteo.com/v1/forecast?${latitude},${longitude}&hourly=temperature_2m,relativehumidity_2m,cloudcover,cloudcover_mid,windspeed_120m&current_weather=true `)
         // fetch("https://next.json-generator.com/api/json/get/41m_cc4lP") // Testing
         .then(response => response.json())
         .catch(error => console.error(error))

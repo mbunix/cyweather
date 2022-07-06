@@ -18,9 +18,9 @@ const weather = props => {
     <div className={styles.weather}>
       <div className={styles["weather-wrap"]}>
         {spinner.spinner === true && <div className="loading-spinner"></div>}
-        {weather && (
-          <>
-            <WeatherBackground condition={weather.currently.icon} />
+        {props.weather && (
+            <>9
+            <WeatherBackground condition={weather.currently} />
             <Currently
               city={city}
               region={region}

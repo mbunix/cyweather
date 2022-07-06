@@ -1,8 +1,8 @@
 const units = props => {
     let checkUnits = null;
-    if (props.flags.units === "us") {
+    if (props.flags === "us") {
       checkUnits = "°F";
-    } else if (props.flags.units === "si") {
+    } else if (props.flags === "si") {
       checkUnits = "°C";
     }
   

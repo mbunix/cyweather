@@ -11,6 +11,7 @@ class WeatherApp extends App {
     const { Component, pageProps, reduxStore } = this.props;
     return (
       <StoreProvider store={reduxStore}>
+        <Component {...pageProps} />
       </StoreProvider>
     );
   }
