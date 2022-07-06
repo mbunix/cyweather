@@ -1,0 +1,72 @@
+.alert-link {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 12px;
+    text-decoration: none;
+    transition: 0.2s;
+    margin-right: 5px;
+    text-align: center;
+    font-weight: 700;
+    cursor: pointer;
+    &:hover {
+      color: #fff;
+      opacity: 0.7;
+      text-decoration: none;
+    }
+    &:global(.warning) {
+      background: rgba(red, 0.5);
+    }
+    &:global(.advisory) {
+      background: rgba(orange, 0.5);
+    }
+    &:global(.watch) {
+      background: rgba(teal, 0.5);
+    }
+  }
+  .modal {
+    &__top {
+      background: #333;
+      color: #fff;
+      padding: 20px;
+      text-shadow: 0 1px 2px rgba(#000, 0.2);
+      font-weight: 700;
+      position: relative;
+      &:global(.warning) {
+        background: red;
+      }
+      &:global(.advisory) {
+        background: orange;
+      }
+      &:global(.watch) {
+        background: teal;
+      }
+      &__close {
+        position: absolute;
+        z-index: 1;
+        top: 15px;
+        right: 20px;
+        font-size: 22px;
+        border: 0;
+        padding: 0;
+        margin: 0;
+        height: 30px;
+        width: 30px;
+        line-height: 0;
+        border-radius: 25px;
+        background: rgba(#000, 0.3);
+        color: #fff;
+      }
+      h2 {
+        position: relative;
+        font-size: 18px;
+        margin: 0;
+        padding: 0;
+        font-weight: 700;
+      }
+    }
+  }
+  .modal-body {
+    padding: 20px;
+  }

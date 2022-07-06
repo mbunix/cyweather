@@ -1,0 +1,42 @@
+.list-group {
+    position: absolute;
+    top: 55px;
+    left: 0;
+    right: 0;
+    border-radius: 4px;
+    background: #fff;
+    :global(.list-group-item) {
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      border: 0;
+    }
+    :global(.active) {
+      background: #eee;
+      color: #000;
+    }
+  }
+  
+  .form-control {
+    border: 0;
+    font-weight: 700;
+    height: 50px;
+    color: rgba(#fff, 1);
+    background-color: rgba(#fff, 0.1);
+    box-shadow: none;
+    &:focus {
+      background: rgba(#fff, 0.2);
+      color: #fff;
+      box-shadow: none;
+    }
+    &::placeholder {
+      color: rgba(#fff, 1);
+    }
+  
+    &:-ms-input-placeholder {
+      color: rgba(#fff, 1);
+    }
+  
+    &::-ms-input-placeholder {
+      color: rgba(#fff, 1);
+    }
+  }
